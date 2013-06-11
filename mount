@@ -1,0 +1,3 @@
+# Unmount device etc (lazy)
+sudo umount -l ~/cluster
+

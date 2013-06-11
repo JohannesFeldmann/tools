@@ -1,0 +1,15 @@
+#klonen
+clone "repository" "directory"
+
+#checkout branch von remote 
+git checkout --track -b pik_stable_0a origin/pik_stable_0a
+
+#neue branch aus aktueller branch erstellen
+checkout -b "newbranch"
+
+#aktuell branch zurücksetzen
+reset --hard
+
+#aktuelle version änderungen anzeigen
+status
+diff

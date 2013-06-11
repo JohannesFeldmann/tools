@@ -1,0 +1,43 @@
+#Rename variable names
+$ ncrename -h -O -v old_variable_name,new_variable_name filename.nc
+#-h: do not ad to the history variable
+#-O: overwrite the file
+
+#Compare certain variables of two NC files:
+$ nccmp -dfv var1[,var2,...] file1.nc file2.nc
+#-d: Compare data (variable values)
+#-f: Forcefully compare, do not stop after first difference
+#-v: Compare variable(s) var1[,...] only
+
+#Average over time (get rid of time dimension)
+$ ncwa -a time in.nc out.nc 
+
+#Average over time (without getting rid of time dimension)
+$ ncra in.nc out.nc
+
+#Append variables var1,var2 of in.nc to out.nc
+$ ncks -A -v var1,var2 in.nc out.nc
+
+#Delete variables
+$ ncks -x -v var1,var2 in.nc out.nc
+
+#Difference between two NC files file3.nc = file1.nc - file2.nc
+ncdiff -x -v var1,var2 file1.nc file2.nc file3.nc
+#-x -v exclude variables (e.g. which are not present in one of the files)
+
+#Change attributes
+ncatted -a attribute,vars,o,c,value file.nc
+#attribute: eg "unit"
+#vars: eg "pressure", "." means all vars
+#o: overwrite attribute
+#c: data type c = character
+#value: "Pascal"
+
+#Create hyperslab, e.g. cut out records from n to m
+ncks -F -d dimension,firstrecord,lastrecord in.nc out.nc
+#dimension: eg "time"
+#firstrecord: n-th record in time
+#lastrecord: m-th record in time
+
+ncap
+ncatted

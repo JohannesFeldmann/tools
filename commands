@@ -1,0 +1,13 @@
+# total size of current directory
+$ du -sh
+# concatenate several pdfs
+pdftk in1.pdf in2.pdf in3.pdf cat output out.pdf
+
+#convert FLAC to MP3
+find -name "*.flac" -exec ffmpeg -i {} -acodec libmp3lame -ab 192k {}.mp3 \;
+#rename *.flac.mp3 data files
+rename 's/\.flac//' *.mp3
+
+#split mp3 with *.cue
+mp3splt -c image.cue -o @n\ @p\ -\ @t image.mp3
+#with: @p performer (@a artist), @n number, @t title

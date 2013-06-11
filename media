@@ -1,0 +1,2 @@
+# Rip DVD/CD to *.iso
+sudo dd if=/dev/dvd of=outputdir/filename.iso

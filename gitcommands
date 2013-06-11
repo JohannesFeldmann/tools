@@ -1,0 +1,12 @@
+# create and checkout local branch from remote repository
+git checkout -b test origin/test
+
+# Delete branch "foo"
+git branch -d foo
+
+git commit -m "message"
+git merge
+# Undo certain commit
+git revert "name of commit"
+
+
