@@ -1,15 +1,50 @@
-#klonen
-clone "repository" "directory"
+# Clone repository
+git clone "repository" "directory"
 
-#checkout branch von remote 
-git checkout --track -b pik_stable_0a origin/pik_stable_0a
+# Aktuelle Version, Änderungen anzeigen
+git log
+git status
+git diff
+git diff (commitA commitB)
 
-#neue branch aus aktueller branch erstellen
-checkout -b "newbranch"
+##### commits
 
-#aktuell branch zurücksetzen
-reset --hard
+# Commit 
+git commit -m "message"
 
-#aktuelle version änderungen anzeigen
-status
-diff
+# Undo certain commit
+git revert "name of commit"
+
+# Letzten commit rückgängig machen
+reset --hard HEAD
+
+# Merge
+git merge
+
+##### branches
+
+# Neue branch aus aktueller branch erstellen
+git checkout -b "newbranch"
+
+# Create and checkout local branch from remote repository
+git checkout -b test origin/test
+
+# Delete branch "foo"
+git branch -d foo
+
+##### remote repositories
+
+# Add another remote repository "origin2"
+git remote add origin2 git@github.com:foo/bar.git
+
+# Check remote repositories
+git remote -v
+
+# Pull from certain repository "origin2"
+git pull origin2
+
+
+
+
+
+
