@@ -1,3 +1,22 @@
+# open application (vi) in a new terminal
+xterm -e vi subm.cmd &
+
+# symlink: create symbolic link (Verknüpfung):
+ln -s source_file link_name
+
+# lookup MAC-address:
+/sbin/ifconfig
+
+# find... "." für alle Unterordner 
+find . -name string -print
+
+# size of all level 1 sub-directories of current directory
+du -sh *
+
+# add leading zeros to filename
+# rename from to file: adds 0 to each filename which has arbitrary characters at "?" 
+rename year- year-0 year-?????.???.nc
+
 # total size of current directory
 $ du -sh
 # concatenate several pdfs
@@ -11,3 +30,6 @@ rename 's/\.flac//' *.mp3
 #split mp3 with *.cue
 mp3splt -c image.cue -o @n\ @p\ -\ @t image.mp3
 #with: @p performer (@a artist), @n number, @t title
+
+#files/directories changed last
+ls -thair
